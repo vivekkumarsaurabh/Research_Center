@@ -1,697 +1,531 @@
-<?php
-session_start();
-if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
-    header("location: login.php");
-    exit;
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Galgotias Research Center</title>
+  <!---<script src="script.js"></script>--->
+  <!---<link rel="stylesheet" href="style.css">--->
+  <!-- <link rel="stylesheet" href="index2.css"> -->
+
+  <link rel="icon" type="image/x-icon" href="images/favi.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+   
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@500&family=Caveat:wght@500&family=Cormorant+Garamond&family=Macondo&display=swap" rel="stylesheet">
+
+<style>
+  p{
+    
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2rem;
+    font-weight:300;
+    line-height:1.6rem;
+
+  }
+.flexc {
+  display: flex;
+  justify-content: center;
+  align-items:flex-end;
+  flex-wrap: wrap;
+  margin: 40px 10px;
+  min-height: 365px;
+}
+.rg {
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container-fluid .flexc .row .rgroup:hover
+{
+ margin-bottom:;
+
+ /*box-shadow: 10px 10px 10px 3px  lightgrey ;*/
+ box-shadow: 0 0 20px 0 rgba(0,0,0,0.4);
+ transform: translateY(-20px);
+}
+.container-fluid .flexc .row .rgroup {
+  margin: 7px;
+  transition: 0.6s;
+  
+}
+h3{
+  font-family: 'Baloo Bhai 2', cursive;
+}
+#containerf #Part1{
+  height:400px;
+}
+#containerf a{
+color:#fff;
+text-decoration:none;
+cursor:pointer;
+}
+#visit p{
+  color:#fff;
+}
+nav a{
+  color:white;
+}
+.jumbotron li{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.2rem;
+    font-weight:300;
+    line-height:1.6rem;
 }
 
 
-?>
-<!DOCTYPE html>
-<html dir="ltr" lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="Galgotia University - Research Group">
-    <meta name="description" content="Galgotia University - Research Group">
-    <meta name="robots" content="noindex,nofollow">
-    <title>Galgotia University - Research DashBoard</title>
-    <link rel="canonical" href="https://www.wrappixel.com/templates/Flexy-admin-lite/" />
-    <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/logo-icon.jfif">
-    <!-- Custom CSS -->
-    <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
-    <link href="../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="../dist/css/style.min.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-    <style>
-        
-        .mainpic {
-            background-image: url('../assets/images/clg-pic.jfif');
-            height: 600px;
-            width: 100%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-           opacity: 0.7;
-        }
-    </style>
+
+
+
+
+
+
+
+
+
+.counter {
+    color: #0B697E;
+    background: linear-gradient(#0B697E, #0B697E 43%, transparent 43%, transparent 57%, #0B697E 57%);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    width: 210px;
+    height: 210px;
+    padding: 43px 28px 35px;
+    margin: 0 auto;
+    border-radius: 70px;
+    position: relative;
+    z-index: 1;
+}
+
+.counter:before,
+.counter:after {
+    content: "";
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    right: 13px;
+    bottom: 13px;
+    z-index: -1;
+}
+
+.counter:after {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
+    top: 23px;
+    left: 23px;
+    right: 23px;
+    bottom: 23px;
+}
+
+.counter .counter-icon {
+    font-size: 30px;
+    margin: 0 0 10px;
+}
+
+.counter h3 {
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin: 0 0 9px;
+}
+
+.counter .counter-value {
+    font-size: 30px;
+    font-weight: 600;
+    display: block;
+}
+
+.counter.green {
+    color: #59AE58;
+    background: linear-gradient(#59AE58, #59AE58 43%, transparent 43%, transparent 57%, #59AE58 57%);
+}
+
+.counter.yellow {
+    color: #FEA703;
+    background: linear-gradient(#FEA703, #FEA703 43%, transparent 43%, transparent 57%, #FEA703 57%);
+}
+
+ .counter.blue {
+    color: #0C8AFA;
+    background: linear-gradient(#0C8AFA, #0C8AFA 43%, transparent 43%, transparent 57%, #0C8AFA 57%);
+}
+
+
+
+.fa-facebook-square:hover {
+    color: #3B579D;
+    cursor: pointer;
+}
+
+.fa-linkedin:hover {
+    color: #007BB6;
+    cursor: pointer;
+    
+}
+
+.fa-twitter-square:hover {
+    color: #2CAAE1;
+    cursor: pointer;
+}
+
+
+.social{
+  margin:5px;
+}
+
+
+</style>
+
 </head>
 
 <body>
-    <!-- ============================================================== -->
-    <!-- Preloader - style you can find in spinners.css -->
-    <!-- ============================================================== -->
-    <div class="preloader">
-        <div class="lds-ripple">
-            <div class="lds-pos"></div>
-            <div class="lds-pos"></div>
+<nav class="navbar navbar-expand-lg navbar-dark; bg-#940824;" style="background-color:#940824; color:#fff;">
+    <a class="navbar-brand" href="index.php">Galgotias Research Society</a>
+    <button class="navbar-toggler"  type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span  class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.php">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Sign In
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="dashboard-admin/html/login.php">Sign In Faculty</a>
+
+            <!-- <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="dashboard-student/html/login_student.php">Sign In Student</a> -->
+          </div>
+        </li>
+
+      </ul>
+      
+    </div>
+  </nav>
+  <!--- 
+  <div class="navbar">
+    <ul>
+      <li> <a href="index_php.php">HOME</a></li>
+
+<li> <a href="dashboard-admin/html/signup_faculty.php"target="">SIGNUP Faculty</a></li>
+  <li> <a href="dashboard-admin/html/login.php"target="">SIGNIN Faculty</a></li>
+
+     
+      <li> <a href="dashboard-student/html/signup_student.php"target="">SIGNUP Student</a></li>
+      
+   <li> <a href="dashboard-student/html/login_student.php"target="">SIGNIN Student</a></li>
+    </ul>
+  </div>--->
+  <div class="pic">
+    <img style="width: 100%;" src="images/home1.jpg" alt="">
+  </div>
+
+  <div class="jumbotron jumbotron-fluid text-justify">
+
+    <div class="container">
+      
+        <h3 style="border-bottom:2px solid brown; padding-bottom:3px; display:inline-block;  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">VISION
+        </h3>
+    
+      <p class="my-4">
+
+    Create an outstanding atmosphere for researchs and developers and achieve excellence in innovations, creativity, development and research.    
+      </p>
+
+    </div>
+    <br>
+    <div class="container">
+    
+        <h3 style="border-bottom:2px solid brown; padding-bottom:3px; display:inline-block;  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">MISSION
+        </h3>
+    
+
+      <p class="my-4">
+      To enable excellence in research and innovation by :
+    <li style="list-style-type:square;">Facilitating and enhancing partnerships and collaborations among researchs funding agencies and industry 4.0</li> 
+    <li  style="list-style-type:square;">Providing Hi-Tech technical training , infrastructure to  promotes creativity and support  to established skilled entrepreneurs.</li>
+<li  style="list-style-type:square;">
+Ensuring  our policies and support advance a culture of innovation while ensuring ethical compliance.
+</li>
+<li  style="list-style-type:square;">
+Foster diverse and inclusive work enviroment.
+</li>
+
+
+      </p>
+
+    </div>
+    <br>
+
+  </div>
+
+
+  <div class="container align-items-center" data-aos="fade-up">
+        <center>
+            <h4 style="display:inline-block; border-bottom: 2px solid #940824; padding-bottom: 4px; color: #000000;">
+                OUR ACHEIVEMENTS</h4>
+
+        </center>
+        <br>
+
+        <div class="row">
+            <div class="col-md-3 col-sm-4">
+                <div class="counter">
+                    <div class="counter-icon"><i class="fa fa-globe"></i></div>
+                    <h3>Confrence</h3>
+                    <span class="counter-value">20</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-4">
+                <div class="counter yellow">
+                    <div class="counter-icon"><i class="fa fa-book" aria-hidden="true"></i></div>
+                    <h3>Book</h3>
+                    <span class="counter-value">40</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-4">
+                <div class="counter blue">
+                    <div class="counter-icon"><i class="fa fa-thermometer-full" aria-hidden="true"></i></div>
+                    <h3>Journal</h3>
+                    <span class="counter-value">60</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-4">
+                <div class="counter green">
+                    <div class="counter-icon"><i class="fa fa-globe" aria-hidden="true"></i></div>
+                    <h3>Book Chapter</h3>
+                    <span class="counter-value">80</span>
+                </div>
+            </div>
         </div>
     </div>
-    <!-- ============================================================== -->
-    <!-- Main wrapper - style you can find in pages.scss -->
-    <!-- ============================================================== -->
-    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
-        data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
-        <!-- ============================================================== -->
-        <!-- Topbar header - style you can find in pages.scss -->
-        <!-- ============================================================== -->
-        <header class="topbar" data-navbarbg="skin6">
-            <nav class="navbar top-navbar navbar-expand-md navbar-light">
-                <div class="navbar-header" data-logobg="skin6">
-                    <!-- ============================================================== -->
-                    <!-- Logo -->
-                    <!-- ============================================================== -->
-                    <a class="navbar-brand" href="index.php">
-                        <!-- Logo icon -->
-                        <b class="logo-icon">
-                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                            <!-- Dark Logo icon -->
-                            <img src="../assets/images/logo-icon.jfif" height="50px" alt="homepage" class="dark-logo" />
-                            <!-- Light Logo icon -->
-                            <img src="../assets/images/logo-icon.jfif" height="50px" alt="homepage"
-                                class="light-logo" />
-                        </b>
-                        <!--End Logo icon -->
-                        <!-- Logo text -->
-                        <span class="logo-text">
-                            <!-- dark Logo text -->
-                            <!---  <img src="../assets/images/logo-icon.jfif" height="50px" alt="homepage" class="dark-logo" />--->
-                            <!-- Light Logo text -->
-                            <img src="../assets/images/" class="light-logo" alt="homepage" />
-                        </span>
-                    </a>
-                    <!-- ============================================================== -->
-                    <!-- End Logo -->
-                    <!-- ============================================================== -->
-                    <!-- This is for the sidebar toggle which is visible on mobile only -->
-                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
-                            class="mdi mdi-menu"></i></a>
-                </div>
-                <!-- ============================================================== -->
-                <!-- End Logo -->
-                <!-- ============================================================== -->
-                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
-                    <!-- ============================================================== -->
-                    <!-- toggle and nav items -->
-                    <!-- ============================================================== -->
-                    <ul class="navbar-nav float-start me-auto">
-                        <!-- ============================================================== -->
-                        <!-- Search -->
-                        <!-- ============================================================== -->
-                        <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark"
-                                href="javascript:void(0)"><i class="mdi mdi-magnify me-1"></i> <span
-                                    class="font-16">Search</span></a>
-                            <form class="app-search position-absolute">
-                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a
-                                    class="srh-btn"><i class="mdi mdi-window-close"></i></a>
-                            </form>
-                        </li>
-                    </ul>
-                    <!-- ============================================================== -->
-                    <!-- Right side toggle and nav items -->
-                    <!-- ============================================================== -->
-                    <ul class="navbar-nav float-end">
-                        <span>
-                            <P style="font-size:1.5rem;"><?php
-                           
-                            echo $_SESSION['name'];
-                            //echo $_SESSION['department'];
-                           
-                            
-                            ?></P>
-                          
-                        </span>
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#"
-                                id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="../assets/images/users/profile.png" alt="user" class="rounded-circle"
-                                    width="31">
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end user-dd animated"
-                                aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="profile.php"><i class="ti-user m-r-5 m-l-5"></i>
-                                    My Profile</a>
-                                <a class="dropdown-item" href="signout.php"><i class="ti-wallet m-r-5 m-l-5"></i>
-                                   Sign Out</a>
-                                
-                            </ul>
-                        </li>
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
-                    </ul>
-                </div>
-            </nav>
-        </header>
-        <!-- ============================================================== -->
-        <!-- End Topbar header -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <aside class="left-sidebar" data-sidebarbg="skin6">
-            <!-- Sidebar scroll-->
-            <div class="scroll-sidebar">
-                <!-- Sidebar navigation-->
-                <nav class="sidebar-nav">
-                    <ul id="sidebarnav">
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="index.php" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
-                                    class="hide-menu">Dashboard</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="profile.php" aria-expanded="false"><i
-                                    class="mdi mdi-account-network"></i><span class="hide-menu">Profile</span></a></li>
-                                  
-                                    <?php
-                include 'dbconn.php';
+
+<br><br>
+<center>
+  <h2
+    style="text-align: center;  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    margin-bottom: 3px; border-bottom:2px solid brown; display:inline-block;">
+    RESEARCH GROUPS</h2>
+</center>
+  <?php/*
+   include 'dbconn.php';
+            
+   $sql1 = "SELECT * FROM `research` ";
+   $result = mysqli_query($conn, $sql1);
+   while($rows = mysqli_fetch_assoc($result)){
+
+  $category = $rows['category'];
+  */
+  ?>
+
+  <div class="container-fluid">
+    <div class="flexc">
+      <div class="row">
+        
+        <?php
+          include 'dbconn.php';
+        $cate_query = "SELECT * FROM `research_name_group`";
+
+        $categ = mysqli_query($conn, $cate_query);
+        while($rows = mysqli_fetch_assoc($categ))
+        {
+
+          
+       
+        
+          
+         
+        ?>
+
+          <div class="rgroup" style="width:10rem;">
+          <a href="dashboard-admin/html/research.php?category=<?php echo $rows['category'];?> " ><img src="<?php echo $rows['pic'];?>" width="150px" height="150px" alt=""></a>
+            <P class="rg"><?php  
+            echo    $rows['name'];          
+       
+            ?></P>
+            
+          </div>
+       
+          <?php
+                                        }
+                                       ?>
+      </div>
+    </div>
+  </div>
+  <?php
+//}
+
+?>
+
+  <br>
+
+
+  <footer>
+
+<div class="container-fluid" style="background-color:#940824; color:#fff;  " >
+  <div class="container">
+      <div class="row">
+
+     
+        <div class="col-lg-3">
+             <h1>
+                Galgotias <br>
+                 Research  <br>
+                 Society <br>
+             </h1>
+        </div>
+        <div class="col-lg-3" style="list-style:none; color:#fff; text-decoration:none;">
+          <h5>
+            Explore
+            </h5>
+            <li  style="margin:10px;">
+               <a href="index.php" style="list-style:none; color:#fff; text-decoration:none; border-top:2px solid #fff; margin:5px;">Home</a> 
+            </li>
+            <li  style="margin:10px;">
+              <a href="about.php" style="list-style:none; color:#fff; text-decoration:none; border-top:2px solid #fff; margin:5px;"> About</a> 
+            </li>
+            <li  style="margin:10px;">
+              <a href="" style="list-style:none; color:#fff; text-decoration:none; border-top:2px solid #fff; margin:5px;">Blog</a>  
+            </li>
+            
+         
+        </div>
+        <div class="col-lg-3">
+            <h5>
+                Visit
+            </h5>
+            <p>
+                GALGOTIAS UNIVERSITY
+                <br>
+
+Plot No.2, Sector 17-A Yamuna Expressway, Greater Noida, Gautam Buddh Nagar,
+
+Uttar Pradesh, 203201
+
+Phone1:+91 98101 62221
+            </p>
+        </div>
+        <div class="col-lg-3" style="list-style:none; color:#fff; text-decoration:none;">
+            <div>
+                <h5>
+                    Legal
+                </h5>
+                <li style="margin:10px;"><a href="" style="list-style:none; color:#fff; text-decoration:none; border-top:2px solid #fff; margin:5px;"> Term and Conditions</a>  </li>
+                <li  style="margin:10px;"><a href="" style="list-style:none; color:#fff; text-decoration:none; border-top:2px solid #fff; margin-top:10px;"> Privacy Policy</a></li>
+
+
+            </div> 
+            <br>
+            <div>
+                <h5>Connect With Us</h5>
+
+                <i class="fab fa-facebook-square social fa-2x"></i>
+                 <i class="fab fa-linkedin social fa-2x"></i> 
+                <i class="fab fa-twitter-square social fa-2x"></i>
+            </div>
+           
+
+        </div>
+
+        </div>
+     
+        
+    </div>
+       <div class="container"  style="background-color:#940824; color:#fff;">
+             <p  class="text-center" style="color:#fff;  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">copyright © 2011  Galgotias University - All right reserved  | Design By Vivek & Sankalp</p>
+         </div>
+ 
+</div>
+</footer>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+            integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
             
 
-                $notification = "SELECT COUNT(status) as total  FROM `student_request` where `status`=''";
-                $query_notify = mysqli_query($conn,  $notification);
-                $result_notify = mysqli_fetch_assoc($query_notify);
-                     // echo total;
-                  
-                              ?>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="request_student.php" aria-expanded="false"><i class="mdi mdi-account-plus mx-2"><span class="text-danger font-weight-bolder" style=""><?php echo $result_notify['total'];?></span></i><span
-                                    class="hide-menu">Request Students</span></a></li>
-                                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                                        href="students.php" aria-expanded="false"><i class="mdi mdi-face"></i><span
-                                                            class="hide-menu">Students</span></a></li>
-                                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                        href="core_student.php" aria-expanded="false"><i class="mdi mdi-account-settings-variant"></i><span
-                                            class="hide-menu">Core Students</span></a></li>
-                                           
-                                                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                                        href="rejected_student.php" aria-expanded="false"><i class="mdi mdi-account-remove"></i><span
-                                                            class="hide-menu">Rejected Students</span></a></li>
-                       
-                                    
-                             <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="request_faculty.php" aria-expanded="false"><i class="mdi mdi-account-plus mx-2"><span class="text-danger font-weight-bolder" style=""><?php echo $result_notify['total'];?></span></i><span
-                                    class="hide-menu">Request Faculty</span></a></li>
-                                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="faculty_list.php" aria-expanded="false"><i class="mdi mdi-face"></i><span
-                                    class="hide-menu">Faculty Members</span></a></li>
-                                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="upload_research_admin.php" aria-expanded="false"><i class="mdi mdi-book-open-page-variant"></i><span
-                                    class="hide-menu">Research Upload</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="research_list.php" aria-expanded="false"><i class="mdi mdi-book-open-page-variant"></i><span
-                                    class="hide-menu">Research Lists</span></a></li>
+     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script type="text/javascript">
 
-                                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="upload_event.php" aria-expanded="false"><i class="mdi mdi-book-open-page-variant"></i><span
-                                    class="hide-menu">Upload Event</span></a></li>
-                                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="event_upload_list.php" aria-expanded="false"><i class="mdi mdi-book-open-page-variant"></i><span
-                                    class="hide-menu">Event List</span></a></li>
-                                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="EventsHeld_upload.php" aria-expanded="false"><i class="mdi mdi-book-open-page-variant"></i><span
-                                    class="hide-menu">Archived</span></a></li>
-                        <!-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="error-404.html" aria-expanded="false"><i class="mdi mdi-alert-outline"></i><span
-                                    class="hide-menu">404</span></a></li> -->
-                        <!---  <li class="text-center p-40 upgrade-btn">
-                            <a href="https://www.wrappixel.com/templates/flexy-bootstrap-admin-template/"
-                                class="btn d-block w-100 btn-danger text-white" target="_blank">Upgrade to Pro</a>
-                        </li>--->
-                    </ul>
 
-                </nav>
-                <!-- End Sidebar navigation -->
-            </div>
-            <!-- End Sidebar scroll-->
-        </aside>
-        <!-- ================================================ -->
-        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper  -->
-        <!-- ============================================================== -->
-        <div class="page-wrapper">
-            <!-- ============================================================== -->
-            <!-- Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-            <div class="page-breadcrumb">
-                <div class="row align-items-center">
-                    <div class="col-6">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb mb-0 d-flex align-items-center">
-                                <li class="breadcrumb-item"><a href="index.php" class="link"><i
-                                            class="mdi mdi-home-outline fs-4"></i></a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-                            </ol>
-                        </nav>
-                        <h1 class="mb-0 fw-bold">Dashboard</h1>
-                    </div>
-                    <!---<div class="col-6">
-                        <div class="text-end upgrade-btn">
-                            <a href="https://www.wrappixel.com/templates/flexy-bootstrap-admin-template/" class="btn btn-primary text-white"
-                                target="_blank">Upgrade to Pro</a>
-                        </div>
-                    </div>-->
-                </div>
-            </div>
-            <!-- ============================================================== -->
-            <!-- End Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- Container fluid  -->
-            <!-- ============================================================== -->
+            $(document).ready(function () {
+                $('.counter-value').each(function () {
+                    $(this).prop('Counter', 0).animate({
+                        Counter: $(this).text()
+                    }, {
+                        duration: 4500,
+                        easing: 'swing',
+                        step: function (now) {
+                            $(this).text(Math.ceil(now));
+                        }
+                    });
+                });
+            });
+        </script>
 
-            <div class="container-fluid">
-                <div class="col-sm-12">
-                    <div class="container mainpic" style="text-align:center; ">
-                     <span style=" width: 100%; ">
-                        <h4 style="color: #fff; font-weight: 900; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 3rem; font-weight: bold;padding: 280px;">Welcome To Our Galgotias Research Center </h4>
-                     </span>  
-                    </div>
-                </div>
+        <script type="text/javascript">
+            // Code By Webdevtrick ( https://webdevtrick.com )
+            const items = document.querySelectorAll(".accordion a");
 
-                <!-- ============================================================== -->
-                <!-- Sales chart -->
-                <!-- ============================================================== -->
-                <!-----   <div class="row">
-                    <div class="col-lg-8">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-md-flex align-items-center">
-                                    <div>
-                                        <h4 class="card-title">Sales Summary</h4>
-                                        <h6 class="card-subtitle">Ample admin Vs Pixel admin</h6>
-                                    </div>
-                                    <div class="ms-auto d-flex no-block align-items-center">
-                                        <ul class="list-inline dl d-flex align-items-center m-r-15 m-b-0">
-                                            <li class="list-inline-item d-flex align-items-center text-info"><i class="fa fa-circle font-10 me-1"></i> Ample
-                                            </li>
-                                            <li class="list-inline-item d-flex align-items-center text-primary"><i class="fa fa-circle font-10 me-1"></i> Pixel
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="amp-pxl mt-4" style="height: 350px;">
-                                    <div class="chartist-tooltip"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Weekly Stats</h4>
-                                <h6 class="card-subtitle">Average sales</h6>
-                                <div class="mt-5 pb-3 d-flex align-items-center">
-                                    <span class="btn btn-primary btn-circle d-flex align-items-center">
-                                        <i class="mdi mdi-cart-outline fs-4" ></i>
-                                    </span>
-                                    <div class="ms-3">
-                                        <h5 class="mb-0 fw-bold">Top Sales</h5>
-                                        <span class="text-muted fs-6">Johnathan Doe</span>
-                                    </div>
-                                    <div class="ms-auto">
-                                        <span class="badge bg-light text-muted">+68%</span>
-                                    </div>
-                                </div>
-                                <div class="py-3 d-flex align-items-center">
-                                    <span class="btn btn-warning btn-circle d-flex align-items-center">
-                                        <i class="mdi mdi-star-circle fs-4" ></i>
-                                    </span>
-                                    <div class="ms-3">
-                                        <h5 class="mb-0 fw-bold">Best Seller</h5>
-                                        <span class="text-muted fs-6">MaterialPro Admin</span>
-                                    </div>
-                                    <div class="ms-auto">
-                                        <span class="badge bg-light text-muted">+68%</span>
-                                    </div>
-                                </div>
-                                <div class="py-3 d-flex align-items-center">
-                                    <span class="btn btn-success btn-circle d-flex align-items-center">
-                                        <i class="mdi mdi-comment-multiple-outline text-white fs-4" ></i>
-                                    </span>
-                                    <div class="ms-3">
-                                        <h5 class="mb-0 fw-bold">Most Commented</h5>
-                                        <span class="text-muted fs-6">Ample Admin</span>
-                                    </div>
-                                    <div class="ms-auto">
-                                        <span class="badge bg-light text-muted">+68%</span>
-                                    </div>
-                                </div>
-                                <div class="py-3 d-flex align-items-center">
-                                    <span class="btn btn-info btn-circle d-flex align-items-center">
-                                        <i class="mdi mdi-diamond fs-4 text-white" ></i>
-                                    </span>
-                                    <div class="ms-3">
-                                        <h5 class="mb-0 fw-bold">Top Budgets</h5>
-                                        <span class="text-muted fs-6">Sunil Joshi</span>
-                                    </div>
-                                    <div class="ms-auto">
-                                        <span class="badge bg-light text-muted">+15%</span>
-                                    </div>
-                                </div>
+            function toggleAccordion() {
+                this.classList.toggle('active');
+                this.nextElementSibling.classList.toggle('active');
+            }
 
-                                <div class="pt-3 d-flex align-items-center">
-                                    <span class="btn btn-danger btn-circle d-flex align-items-center">
-                                        <i class="mdi mdi-content-duplicate fs-4 text-white" ></i>
-                                    </span>
-                                    <div class="ms-3">
-                                        <h5 class="mb-0 fw-bold">Best Designer</h5>
-                                        <span class="text-muted fs-6">Nirav Joshi</span>
-                                    </div>
-                                    <div class="ms-auto">
-                                        <span class="badge bg-light text-muted">+90%</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>--->
-                <!-- ============================================================== -->
-                <!-- Sales chart -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Table -->
-                <!-- ============================================================== -->
-                <!---- <div class="row">
+            items.forEach(item => item.addEventListener('click', toggleAccordion));
+        </script>
 
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
+        <script>
+            $('.modal').on('click', function (e) {
+                e.preventDefault();
+                $('#theModal').modal('show').find('.modal-content').load($(this).attr('href'));
+            });
+        </script>
 
-                                <div class="d-md-flex">
-                                    <div>
-                                        <h4 class="card-title">Top Selling Products</h4>
-                                        <h5 class="card-subtitle">Overview of Top Selling Items</h5>
-                                    </div>
-                                    <div class="ms-auto">
-                                        <div class="dl">
-                                            <select class="form-select shadow-none">
-                                                <option value="0" selected>Monthly</option>
-                                                <option value="1">Daily</option>
-                                                <option value="2">Weekly</option>
-                                                <option value="3">Yearly</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                              
-                                <div class="table-responsive">
-                                    <table class="table mb-0 table-hover align-middle text-nowrap">
-                                        <thead>
-                                            <tr>
-                                                <th class="border-top-0">Products</th>
-                                                <th class="border-top-0">License</th>
-                                                <th class="border-top-0">Support Agent</th>
-                                                <th class="border-top-0">Technology</th>
-                                                <th class="border-top-0">Tickets</th>
-                                                <th class="border-top-0">Sales</th>
-                                                <th class="border-top-0">Earnings</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="m-r-10"><a
-                                                                class="btn btn-circle d-flex btn-info text-white">EA</a>
-                                                        </div>
-                                                        <div class="">
-                                                            <h4 class="m-b-0 font-16">Elite Admin</h4>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>Single Use</td>
-                                                <td>John Doe</td>
-                                                <td>
-                                                    <label class="badge bg-danger">Angular</label>
-                                                </td>
-                                                <td>46</td>
-                                                <td>356</td>
-                                                <td>
-                                                    <h5 class="m-b-0">$2850.06</h5>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="m-r-10"><a
-                                                                class="btn btn-circle d-flex btn-orange text-white">MA</a>
-                                                        </div>
-                                                        <div class="">
-                                                            <h4 class="m-b-0 font-16">Monster Admin</h4>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>Single Use</td>
-                                                <td>Venessa Fern</td>
-                                                <td>
-                                                    <label class="badge bg-info">Vue Js</label>
-                                                </td>
-                                                <td>46</td>
-                                                <td>356</td>
-                                                <td>
-                                                    <h5 class="m-b-0">$2850.06</h5>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="m-r-10"><a
-                                                                class="btn btn-circle d-flex btn-success text-white">MP</a>
-                                                        </div>
-                                                        <div class="">
-                                                            <h4 class="m-b-0 font-16">Material Pro Admin</h4>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>Single Use</td>
-                                                <td>John Doe</td>
-                                                <td>
-                                                    <label class="badge bg-success">Bootstrap</label>
-                                                </td>
-                                                <td>46</td>
-                                                <td>356</td>
-                                                <td>
-                                                    <h5 class="m-b-0">$2850.06</h5>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="m-r-10"><a
-                                                                class="btn btn-circle d-flex btn-purple text-white">AA</a>
-                                                        </div>
-                                                        <div class="">
-                                                            <h4 class="m-b-0 font-16">Ample Admin</h4>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>Single Use</td>
-                                                <td>John Doe</td>
-                                                <td>
-                                                    <label class="badge bg-purple">React</label>
-                                                </td>
-                                                <td>46</td>
-                                                <td>356</td>
-                                                <td>
-                                                    <h5 class="m-b-0">$2850.06</h5>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>---->
-                <!-- ============================================================== -->
-                <!-- Table -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Recent comment and chats -->
-                <!-- ============================================================== -->
-                <!----  <div class="row">
-                   
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Recent Comments</h4>
-                            </div>
-                            <div class="comment-widgets scrollable">
-                              
-                                <div class="d-flex flex-row comment-row m-t-0">
-                                    <div class="p-2"><img src="../assets/images/users/1.jpg" alt="user" width="50"
-                                            class="rounded-circle"></div>
-                                    <div class="comment-text w-100">
-                                        <h6 class="font-medium">James Anderson</h6>
-                                        <span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing
-                                            and type setting industry. </span>
-                                        <div class="comment-footer">
-                                            <span class="text-muted float-end">April 14, 2021</span> <span
-                                                class="badge bg-primary">Pending</span> <span class="action-icons">
-                                                <a href="javascript:void(0)"><i class="ti-pencil-alt"></i></a>
-                                                <a href="javascript:void(0)"><i class="ti-check"></i></a>
-                                                <a href="javascript:void(0)"><i class="ti-heart"></i></a>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                              
-                                <div class="d-flex flex-row comment-row">
-                                    <div class="p-2"><img src="../assets/images/users/4.jpg" alt="user" width="50"
-                                            class="rounded-circle"></div>
-                                    <div class="comment-text active w-100">
-                                        <h6 class="font-medium">Michael Jorden</h6>
-                                        <span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing
-                                            and type setting industry. </span>
-                                        <div class="comment-footer ">
-                                            <span class="text-muted float-end">April 14, 2021</span>
-                                            <span class="badge bg-success">Approved</span>
-                                            <span class="action-icons active">
-                                                <a href="javascript:void(0)"><i class="ti-pencil-alt"></i></a>
-                                                <a href="javascript:void(0)"><i class="icon-close"></i></a>
-                                                <a href="javascript:void(0)"><i class="ti-heart text-danger"></i></a>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="d-flex flex-row comment-row">
-                                    <div class="p-2"><img src="../assets/images/users/5.jpg" alt="user" width="50"
-                                            class="rounded-circle"></div>
-                                    <div class="comment-text w-100">
-                                        <h6 class="font-medium">Johnathan Doeting</h6>
-                                        <span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing
-                                            and type setting industry. </span>
-                                        <div class="comment-footer">
-                                            <span class="text-muted float-end">April 14, 2021</span>
-                                            <span class="badge bg-danger">Rejected</span>
-                                            <span class="action-icons">
-                                                <a href="javascript:void(0)"><i class="ti-pencil-alt"></i></a>
-                                                <a href="javascript:void(0)"><i class="ti-check"></i></a>
-                                                <a href="javascript:void(0)"><i class="ti-heart"></i></a>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Temp Guide</h4>
-                                <div class="d-flex align-items-center flex-row m-t-30">
-                                    <div class="display-5 text-info"><i class="wi wi-day-showers"></i>
-                                        <span>73<sup>°</sup></span>
-                                    </div>
-                                    <div class="m-l-10">
-                                        <h3 class="m-b-0">Saturday</h3><small>Ahmedabad, India</small>
-                                    </div>
-                                </div>
-                                <table class="table no-border mini-table m-t-20">
-                                    <tbody>
-                                        <tr>
-                                            <td class="text-muted">Wind</td>
-                                            <td class="font-medium">ESE 17 mph</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-muted">Humidity</td>
-                                            <td class="font-medium">83%</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-muted">Pressure</td>
-                                            <td class="font-medium">28.56 in</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-muted">Cloud Cover</td>
-                                            <td class="font-medium">78%</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <ul class="row list-style-none text-center m-t-30">
-                                    <li class="col-3">
-                                        <h4 class="text-info"><i class="wi wi-day-sunny"></i></h4>
-                                        <span class="d-block text-muted">09:30</span>
-                                        <h3 class="m-t-5">70<sup>°</sup></h3>
-                                    </li>
-                                    <li class="col-3">
-                                        <h4 class="text-info"><i class="wi wi-day-cloudy"></i></h4>
-                                        <span class="d-block text-muted">11:30</span>
-                                        <h3 class="m-t-5">72<sup>°</sup></h3>
-                                    </li>
-                                    <li class="col-3">
-                                        <h4 class="text-info"><i class="wi wi-day-hail"></i></h4>
-                                        <span class="d-block text-muted">13:30</span>
-                                        <h3 class="m-t-5">75<sup>°</sup></h3>
-                                    </li>
-                                    <li class="col-3">
-                                        <h4 class="text-info"><i class="wi wi-day-sprinkle"></i></h4>
-                                        <span class="d-block text-muted">15:30</span>
-                                        <h3 class="m-t-5">76<sup>°</sup></h3>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>---->
-                <!-- ============================================================== -->
-                <!-- Recent comment and chats -->
-                <!-- ============================================================== -->
-            </div>
-            <!-- ============================================================== -->
-            <!-- End Container fluid  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
-            <footer class="footer text-center">
-                All Rights Reserved by Galgotias University <a href="https://www.wrappixel.com">Galgotias
-                    University</a>.
-            </footer>
-            <!-- ============================================================== -->
-            <!-- End footer -->
-            <!-- ============================================================== -->
-        </div>
-        <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
-        <!-- ============================================================== -->
-    </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
-    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../dist/js/app-style-switcher.js"></script>
-    <!--Wave Effects -->
-    <script src="../dist/js/waves.js"></script>
-    <!--Menu sidebar -->
-    <script src="../dist/js/sidebarmenu.js"></script>
-    <!--Custom JavaScript -->
-    <script src="../dist/js/custom.js"></script>
-    <!--This page JavaScript -->
-    <!--chartis chart-->
-    <script src="../assets/libs/chartist/dist/chartist.min.js"></script>
-    <script src="../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
-    <script src="../dist/js/pages/dashboards/dashboard1.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                offset: 250,
+                duration: 1200,
+            });
+        </script>
+
+
+
 </body>
 
 </html>
